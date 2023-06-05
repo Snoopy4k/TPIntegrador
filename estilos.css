@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900;&display=swap');
+
+*{ /*Margenes en general*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    
+    color:#ededed/*Color de letra */
+}
+
+.header{ /*Cabecera*/
+    position: fixed; /* Fijo la posicion de cabecera*/
+    top:0; /*Arriba*/
+    left: 0; /*Derecha */
+    width: 100%;
+    padding: 20px 10%; /*Para ir moviendo los textos de cabecera*/
+    background: transparent; /*Recuadro de cabecera*/
+    display:flex;
+    justify-content: space-between; /*Que tengan un espaciado entre los textos*/
+    align-items: center; /*Que esten centrados los textos*/
+    z-index: 100; /*Ordena mis elementos para controlar los superpuestos "delante o detras"*/       
+}
+
+.Nombre{
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none; /*Saco el subrayado*/
+    font-weight: 600;
+
+}
+/*Animacion del Nombre*/
+.Nombre::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: barrido 1s ease forwards;
+    animation-delay: .4;
+}
+
+/*Coloco los KeyFrame para la animacion del Nombre DRAVRO*/
+@keyframes barrido{
+    100%{
+        width: 0;
+    }
+}
+
+
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    font-weight: 500; /*Grosor de la fuente*/
+    margin-left: 35px; /*Separacion entre los menu de Inicio quien soy etc*/
+    transition: .3s;
+}
+
+.navbar a:hover, /*Para darle color cada vez que el mouse esta seleccionando la opcion */
+.navbar a.active{ /* Para indicar en que link estamos o pagina */
+    color: #00abf0; /*se pinta de azul */
+
+}
+
+/*Configuracion de Opcion Inicio, ACA ESTA LA FOTO DE LA DOC*/
+.Inicio{
+    height: 100vh;
+    background: url('Imagenes/Servicios/bgDoc.png') no-repeat; /*"No-repeat, es para que no repita la imagen*/
+    background-size: cover; /*La imagen se adapta de acuerdo al tamaño de la pagina, si reduzco el tamaño, se adapta */
+    background-position: center; /*O darle 2 parametros, "x" e "y", para mover la imagen Ó pasarle los parametros de Top Right Left Bottom*/
+    display: flex;
+    align-items:flex-end; 
+    padding:0 10%; /*Configuracion del Texto y sus margenes, para hacer el recuadro*/
+  
+}
+
+.Inicio-Contenido{
+    max-width: 600px;
+}
+
+
+.Inicio-Contenido h1{ /*Soy la DraVro*/
+    position: relative;
+    max-width: 600px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2; /*Separacion entre letras*/
+}
+
+.Inicio-Contenido h1::before{ /*Animacion de Soy la DraVro*/
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: barrido 1s ease forwards;
+    animation-delay: .4;
+}
+
+
+
+
+.Inicio-Contenido h3{ /*En que puedo ayudarte*/
+    position: relative;
+    max-width: 600px;
+    font-size: 22px;
+    font-weight: 700;
+    color:#00abf0;
+}
+
+.Inicio-Contenido h3::before{ /*Animacion de En que puedo ayudarte*/
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: barrido 1.6s ease forwards;
+    animation-delay: .4;
+}
+
+
+.Inicio-Contenido p{ /*Descripcion*/
+    position: relative;
+    max-width: 600px;
+    font-size: 16px;
+    margin: 25px 0 40px;
+}
+
+.Inicio-Contenido p::before{ /*Animacion de Descripcion*/
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: barrido 2s ease forwards;
+    animation-delay: .4;
+}
+
+/*Boton molde*/
+.Inicio-Contenido .btn-box{
+        position: relative;
+        display: flex;
+        justify-content: space-between; /*Separacion entre botones*/
+        width:450px;
+        height: 90px; /*Recuadro de botones*/
+        
+}
+
+.Inicio-Contenido .btn-box::before{ /*Animacion de Botones*/
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: barrido 1.5s ease forwards;
+    animation-delay: .4;
+    z-index: 2;
+}
+
+/*Boton Cada Uno*/
+    .btn-box a{
+        position: relative;
+        display: inline-flex; /*Separarme los botones en Linea*/
+        justify-content: center;
+        align-items:center;
+        width: 145px; /*Recuadro de botones*/
+        height: 80%;
+        background: #00abf0;
+        border: 2px solid #00abf0;
+        border-radius: 10px;
+        font-size: 15px;
+        color: #081b29;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 1px; /*Separacion entre letras de una palabra*/
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .btn-box a:nth-child(2){ /*Indico que es para los 3 hijos*/
+        background: transparent;
+        color: #00abf0;
+    }
+
+    .btn-box a::before{ /*Me ayuda en la transicion del antes y el despues, con hover y before*/
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: rgb(58, 240, 3);
+        z-index: -1;
+        transition: .5s;
+        border-radius: 10px;
+    }
+
+    .btn-box a:hover:before{
+        width: 100%;
+    }
+
+
+    /*Redes sociales molde*/
+   .Inicio-redes{
+    position: relative;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+   }     
+
+   .Inicio-redes::before{ /*Animacion de Redes*/
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: barrido 2.5s ease forwards;
+    animation-delay: .4;
+}
+
+   /*Redes sociales por cada una*/
+   .Inicio-redes a{
+    position: relative; /*Relativa a la posicion, e indico las propiedades del recuadro con width y height "LA POSICION"*/
+    display: inline-flex; /*En linea flexible*/
+    justify-content: center;
+    align-items:center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+
+    border: 2px solid #00abf0; /*Indio el grosor del contorno*/
+    border-radius: 50%; /*Le pido que se haga circular*/
+    font-size: 20px;
+    text-decoration: none; /*Quito el subrayado*/
+    color: #00abf0;
+    overflow: hidden;
+    z-index: 1;
+   }
+
+
+   .Inicio-redes a::before{ /*Me ayuda en la transicion del antes y el despues, con hover y before*/
+    content: '';
+    position: absolute; /*Le indico sobre quien o que elemento quiero que sea absoluto y siempre hay un relative anteriormente como referencia, para posicionarlo dentro de INICIO*/
+    top: 0; /*Indico donde quiero que se posicione dentro de la Seccion Inicio*/
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgb(58, 240, 3);
+    z-index: -1;
+    transition: .5s;
+    }
+
+
+.Inicio-redes a:hover:before{
+    width: 100%;
+}
+
+
+/*Foto o Imagen*/
+.Inicio-imghover:hover{
+    
+    background: #081b29;
+    opacity: .8;
+
+}
+
+/*Animacion de imagen en el fondo de la doc*/
+.Inicio-imghover:hover{
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 500px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;  
+    animation-delay: 4s;
+    animation: barrido 3s ease forwards;
+    z-index: 2;
+   
+}
+
